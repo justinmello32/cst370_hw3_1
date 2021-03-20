@@ -12,6 +12,17 @@ string removeSpaces(string str)
     return str;
 }
 
+bool isPalindrome(string str, int start, int end) {
+
+    if(start < end) {
+        if (str[start] != str[end]) {
+            return false;
+        } else
+        isPalindrome(str, start + 1, end - 1);
+    }
+    return true;
+}
+
 int main() {
 
     string initialInput;
@@ -30,8 +41,10 @@ int main() {
     transform(initialInput.begin(), initialInput.end(), initialInput.begin(), ::toupper);
 
     //Check if palindrome
+    if(isPalindrome(initialInput,0,initialInput.size() - 1))
+        cout << "TRUE";
+    else
+        cout << "FALSE";
 
-
-    cout << initialInput << endl;
     return 0;
 }
