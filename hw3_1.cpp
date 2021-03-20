@@ -34,8 +34,7 @@ int main() {
     initialInput = removeSpaces(initialInput);
 
     //Strip tags
-    initialInput.erase(remove_if(initialInput.begin(), initialInput.end(), [](char c) { return ispunct(c); } ), initialInput.end());
-
+    initialInput.erase(std::remove_if(initialInput.begin(), initialInput.end(), (int(*)(int))std::isalnum), initialInput.end());
     //Transform string to uppercase
     transform(initialInput.begin(), initialInput.end(), initialInput.begin(), ::toupper);
 
