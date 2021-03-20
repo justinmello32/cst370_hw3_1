@@ -6,19 +6,18 @@ using namespace std;
 
 
 // Function to remove all spaces from a given string
-string removeSpaces(string str)
-{
+string removeSpaces(string str) {
     str.erase(remove(str.begin(), str.end(), ' '), str.end());
     return str;
 }
 
 bool isPalindrome(string str, int start, int end) {
 
-    if(start < end) {
+    if(end > start) {
         if (str[start] != str[end]) {
             return false;
         } else
-        isPalindrome(str, start + 1, end - 1);
+        return isPalindrome(str, start + 1, end - 1);
     }
     return true;
 }
