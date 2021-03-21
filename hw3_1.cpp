@@ -1,3 +1,13 @@
+  
+/*
+ * Title: hw3_1.cpp
+ * Abstract: This program reads user inputs and verify if it is a palidrome
+             using a recursive function.
+ * Author: Justin Mello
+ * ID: 2002
+ * Date: 03/21/2021
+ */
+
 #include <iostream>
 #include <algorithm>
 #include <string>
@@ -28,13 +38,13 @@ int main() {
     string validString;
 
     //Gather user input
-    getline(std::cin, initialInput);
+    getline(cin, initialInput);
 
     //First Remove spaces from string
     initialInput = removeSpaces(initialInput);
 
     //Strip tags
-    initialInput.erase(std::remove_if(initialInput.begin(), initialInput.end(), (int(*)(int))std::isalnum), initialInput.end());
+    initialInput.erase(remove_if(initialInput.begin(), initialInput.end(), (int(*)(int))isalnum), initialInput.end());
     //Transform string to uppercase
     transform(initialInput.begin(), initialInput.end(), initialInput.begin(), ::toupper);
 
